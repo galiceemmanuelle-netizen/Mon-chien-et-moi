@@ -1,0 +1,440 @@
+/* ================================
+   VARIABLES
+================================ */
+
+:root {
+    --couleur-principale: #5a3e36;
+    --couleur-principale-foncee: #3f2b26;
+    --couleur-secondaire: #d9a86c;
+    --couleur-fond: #f8f5f1;
+    --couleur-surface: #ffffff;
+    --couleur-texte: #2d2926;
+    --couleur-texte-secondaire: #655e59;
+    --couleur-bordure: #ddd6cf;
+    --couleur-focus: #1d70b8;
+    --couleur-desactivee: #b8b3ae;
+
+    --ombre-legere: 0 2px 10px rgba(45, 41, 38, 0.08);
+    --rayon: 12px;
+}
+
+
+/* ================================
+   RÉINITIALISATION SIMPLE
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 0;
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   IMAGES
+================================ */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ================================
+   EN-TÊTE
+================================ */
+
+header {
+    background-color: var(--couleur-surface);
+    border-bottom: 1px solid var(--couleur-bordure);
+}
+
+header nav {
+    width: min(100% - 32px, 1200px);
+    margin: 0 auto;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--couleur-principale);
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+
+/* ================================
+   CONTENU PRINCIPAL
+================================ */
+
+main {
+    width: min(100% - 32px, 1200px);
+    margin: 0 auto;
+}
+
+main > section {
+    padding: 40px 0;
+}
+
+section + section {
+    border-top: 1px solid var(--couleur-bordure);
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--couleur-principale-foncee);
+    font-size: 1.6rem;
+    line-height: 1.25;
+}
+
+h3 {
+    margin: 0;
+    color: var(--couleur-principale-foncee);
+    font-size: 1.1rem;
+    line-height: 1.35;
+}
+
+p {
+    margin-top: 0;
+}
+
+#presentation-titre + p {
+    max-width: 650px;
+    color: var(--couleur-texte-secondaire);
+}
+
+
+/* ================================
+   GRILLE DES PRODUITS
+================================ */
+
+#grille-produits {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+
+/* ================================
+   CARTE PRODUIT
+================================ */
+
+#grille-produits article {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--couleur-surface);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre-legere);
+}
+
+#grille-produits article img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: #eee9e4;
+}
+
+#grille-produits article h3,
+#grille-produits article p,
+#grille-produits article button {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+#grille-produits article h3 {
+    margin-top: 16px;
+}
+
+#grille-produits article p {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    color: var(--couleur-principale);
+    font-weight: 700;
+}
+
+#grille-produits article button:last-child {
+    margin-bottom: 16px;
+}
+
+
+/* ================================
+   BOUTONS
+================================ */
+
+button {
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid var(--couleur-principale);
+    border-radius: 8px;
+    background-color: var(--couleur-principale);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: var(--couleur-principale-foncee);
+    border-color: var(--couleur-principale-foncee);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+button:disabled {
+    background-color: var(--couleur-desactivee);
+    border-color: var(--couleur-desactivee);
+    color: #ffffff;
+    cursor: not-allowed;
+}
+
+
+/* ================================
+   FOCUS CLAVIER
+================================ */
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--couleur-focus);
+    outline-offset: 3px;
+}
+
+
+/* ================================
+   PANIER
+================================ */
+
+#liste-panier {
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    background-color: var(--couleur-surface);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+}
+
+#liste-panier p {
+    margin: 0;
+    color: var(--couleur-texte-secondaire);
+}
+
+#total-panier {
+    color: var(--couleur-principale);
+}
+
+#liste-panier + p {
+    margin-top: 20px;
+    font-size: 1.05rem;
+}
+
+#liste-panier + p + p {
+    color: var(--couleur-texte-secondaire);
+    font-size: 0.9rem;
+}
+
+
+/* ================================
+   FORMULAIRE
+================================ */
+
+#formulaire-commande {
+    max-width: 600px;
+    margin-top: 24px;
+    padding: 20px;
+    background-color: var(--couleur-surface);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre-legere);
+}
+
+#formulaire-commande > div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--couleur-principale-foncee);
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--couleur-texte);
+    font: inherit;
+}
+
+input:focus {
+    border-color: var(--couleur-focus);
+}
+
+
+/* ================================
+   RÉCAPITULATIF
+================================ */
+
+#resume-commande {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: var(--couleur-surface);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+}
+
+#resume-commande p {
+    color: var(--couleur-texte-secondaire);
+}
+
+
+/* ================================
+   FENÊTRE PRODUIT
+================================ */
+
+dialog {
+    width: min(92%, 600px);
+    max-height: 90vh;
+    padding: 0;
+    border: none;
+    border-radius: var(--rayon);
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte);
+    box-shadow: 0 10px 40px rgba(45, 41, 38, 0.25);
+    overflow: auto;
+}
+
+dialog::backdrop {
+    background-color: rgba(45, 41, 38, 0.55);
+}
+
+dialog > h2 {
+    padding: 20px 20px 0;
+}
+
+dialog > div {
+    padding: 0 20px;
+}
+
+dialog img {
+    width: 100%;
+    max-height: 320px;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+dialog button {
+    margin: 0 8px 20px 20px;
+}
+
+
+/* ================================
+   PIED DE PAGE
+================================ */
+
+footer {
+    margin-top: 20px;
+    padding: 32px 16px;
+    background-color: var(--couleur-principale-foncee);
+    color: #ffffff;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+
+/* ================================
+   TABLETTE
+================================ */
+
+@media (min-width: 600px) {
+
+    #grille-produits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    main > section {
+        padding: 48px 0;
+    }
+
+    #formulaire-commande {
+        padding: 24px;
+    }
+}
+
+
+/* ================================
+   ORDINATEUR
+================================ */
+
+@media (min-width: 900px) {
+
+    header nav {
+        width: min(100% - 48px, 1200px);
+    }
+
+    main {
+        width: min(100% - 48px, 1200px);
+    }
+
+    #grille-produits {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    #grille-produits article button {
+        width: calc(100% - 32px);
+    }
+}
+
+
+/* ================================
+   GRAND ÉCRAN
+================================ */
+
+@media (min-width: 1200px) {
+
+    #grille-produits {
+        gap: 28px;
+    }
+}

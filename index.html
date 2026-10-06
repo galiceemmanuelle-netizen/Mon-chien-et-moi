@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mon chien et moi</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <nav aria-label="Navigation principale">
+            <h1>Mon chien et moi</h1>
+
+            <button type="button" disabled>
+                Panier
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <section aria-labelledby="presentation-titre">
+            <h2 id="presentation-titre">Tout pour votre compagnon</h2>
+
+            <p>
+                Découvrez nos articles pour chien et préparez facilement
+                votre demande de commande.
+            </p>
+        </section>
+
+        <section aria-labelledby="catalogue-titre">
+            <h2 id="catalogue-titre">Nos articles</h2>
+
+            <div id="grille-produits">
+
+                <!-- Carte produit temporaire -->
+                <article>
+                    <img
+                        src="images/article-01.jpeg"
+                        alt="Harnais ergonomique anti-traction"
+                    >
+
+                    <h3>Harnais ergonomique anti-traction</h3>
+
+                    <p>15 000 FCFA</p>
+
+                    <button type="button" disabled>
+                        Voir les détails
+                    </button>
+
+                    <button type="button" disabled>
+                        Ajouter au panier
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <section aria-labelledby="panier-titre">
+            <h2 id="panier-titre">Votre panier</h2>
+
+            <div id="liste-panier">
+                <p>Votre panier est vide.</p>
+            </div>
+
+            <p>
+                Total des articles :
+                <strong id="total-panier">0 FCFA</strong>
+            </p>
+
+            <p>
+                Montant hors livraison. Livraison et disponibilité
+                confirmées par la vendeuse.
+            </p>
+
+            <button type="button" disabled>
+                Continuer
+            </button>
+        </section>
+
+        <section aria-labelledby="commande-titre">
+            <h2 id="commande-titre">Vos informations</h2>
+
+            <form id="formulaire-commande">
+
+                <div>
+                    <label for="prenom">Prénom</label>
+                    <input
+                        type="text"
+                        id="prenom"
+                        name="prenom"
+                        autocomplete="given-name"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="commune">Commune</label>
+                    <input
+                        type="text"
+                        id="commune"
+                        name="commune"
+                        required
+                    >
+                </div>
+
+                <button type="submit" disabled>
+                    Voir le récapitulatif
+                </button>
+
+            </form>
+        </section>
+
+        <section aria-labelledby="resume-titre">
+            <h2 id="resume-titre">Votre demande</h2>
+
+            <div id="resume-commande">
+                <p>Votre récapitulatif apparaîtra ici.</p>
+            </div>
+
+            <button type="button" disabled>
+                Modifier
+            </button>
+
+            <button type="button" disabled>
+                Commander sur WhatsApp
+            </button>
+        </section>
+
+    </main>
+
+    <dialog id="fiche-produit" aria-labelledby="fiche-produit-titre">
+
+        <h2 id="fiche-produit-titre">Détails du produit</h2>
+
+        <div>
+            <img
+                src="images/article-01.jpeg"
+                alt="Harnais ergonomique anti-traction"
+            >
+
+            <h3>Harnais ergonomique anti-traction</h3>
+
+            <p>Catégorie : Promenade</p>
+
+            <p>15 000 FCFA</p>
+
+            <p>
+                Harnais confortable conçu pour mieux répartir la pression
+                lors des promenades et limiter les tiraillements.
+            </p>
+        </div>
+
+        <button type="button" disabled>
+            Ajouter au panier
+        </button>
+
+        <button type="button" disabled>
+            Fermer
+        </button>
+
+    </dialog>
+
+    <footer>
+        <p><strong>Mon chien et moi</strong></p>
+
+        <p>Articles pour chien — Projet pédagogique</p>
+
+        <p>
+            Les produits, prix et informations présentés sont fictifs.
+        </p>
+    </footer>
+
+</body>
+</html>
